@@ -28,8 +28,8 @@ if option == 'Draw a digit':
 
         # Convert to grayscale and flatten the image
         # Here's a simple example using OpenCV and NumPy
-        # image_array = cv2.cvtColor(image_array, cv2.COLOR_RGB2GRAY)
-        # image_array = image_array.flatten()
+        image_array = cv2.cvtColor(image_array, cv2.COLOR_RGB2GRAY)
+        image_array = image_array.flatten()
 
         # Make prediction
         prediction = model.predict(image_array.reshape(1, -1))
