@@ -4,13 +4,23 @@ def main():
     st.title("Simple Streamlit App")
     st.sidebar.header("Navigation")
 
-    # Sidebar buttons
-    if st.sidebar.button("app.py"):
-        st.write("You clicked the app.py button")
-    if st.sidebar.button("GitHub"):
-        st.write("You clicked the GitHub button")
-    if st.sidebar.button("IPython Notebook"):
-        st.write("You clicked the IPython Notebook button")
+    # Sidebar navigation links with bullets
+    st.sidebar.markdown("- [app.py](#app)")
+    st.sidebar.markdown("- [GitHub](#github)")
+    st.sidebar.markdown("- [IPython Notebook](#ipython-notebook)")
+
+    # Anchor tags for navigation
+    st.markdown("<a id='app'></a>", unsafe_allow_html=True)
+    st.write("## app.py")
+    st.write("Content for app.py")
+
+    st.markdown("<a id='github'></a>", unsafe_allow_html=True)
+    st.write("## GitHub")
+    st.write("Content for GitHub")
+
+    st.markdown("<a id='ipython-notebook'></a>", unsafe_allow_html=True)
+    st.write("## IPython Notebook")
+    st.write("Content for IPython Notebook")
 
     # Footer LinkedIn button
     st.markdown(
