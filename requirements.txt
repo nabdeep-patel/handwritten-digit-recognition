@@ -2,3 +2,5 @@ streamlit
 numpy
 pandas
 opencv-python
+keras
+tensorflow
