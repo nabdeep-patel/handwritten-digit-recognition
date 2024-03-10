@@ -5,3 +5,4 @@ opencv-python
 keras
 tensorflow
 matplotlib
+streamlit-drawable-canvas
