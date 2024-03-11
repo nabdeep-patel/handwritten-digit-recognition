@@ -13,12 +13,14 @@ Github Repository: https://github.com/nabdeep-patel/handwritten-digit-recognitio
 ## Project Overview
 
 📝 In this project, I have developed a model capable of accurately classifying and recognizing handwritten digits using the MNIST Data. Leveraging the power of machine learning, particularly utilizing the Relu Function.
-
 Subsequently, we evaluated its performance on a separate test dataset. Our model got a test accuracy of 97%.
 
 ## About Relu
 
-🏗️ Our model architecture adopts a deep learning approach tailored for handwritten digit recognition. It comprises a sequential stack of layers, including dense (fully connected) layers along with an output layer. Each dense layer is accompanied by an activation function to introduce non-linearity, thereby enhancing the model's capacity to capture complex patterns.
+1. **Definition:** ReLU stands for Rectified Linear Unit. It is an activation function that introduces non-linearity to the neural network by outputting the input directly if it is positive, and zero otherwise.
+2. **Mathematical Expression:** The ReLU function is defined as **f(x)=max(0,x)**, where **x** is the input to the function and **f(x)** is the output.
+3. **Simple and Efficient:** ReLU is computationally efficient and easy to implement, making it popular in deep learning models.
+4. **Non-linear Activation:** ReLU introduces non-linearity to the neural network, allowing it to learn complex relationships between
 
 🔍 **Model Architecture:**
 
