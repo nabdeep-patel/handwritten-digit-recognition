@@ -13,7 +13,7 @@ Github Repository: https://github.com/nabdeep-patel/handwritten-digit-recognitio
 ## Project Overview
 
 📝 In this project, I have developed a model capable of accurately classifying and recognizing handwritten digits using the MNIST Data. Leveraging the power of machine learning, particularly utilizing the Relu Function.
-Subsequently, we evaluated its performance on a separate test dataset. Our model got a test accuracy of 97%.
+Subsequently, we evaluated its performance on a separate test dataset. Our model got a test accuracy of **97%**.
 
 ## About Relu
 
