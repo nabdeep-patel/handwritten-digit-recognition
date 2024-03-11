@@ -2,6 +2,8 @@
 
 [![Deployed Link](https://img.shields.io/badge/Deployed_Link-Streamlit-blue?style=flat-square)](https://handwritten-digit-recognition-np.streamlit.app/)
 [![GitHub Repository](https://img.shields.io/badge/Repository-Github-blue?style=flat-square&logo=github)](https://github.com/nabdeep-patel/handwritten-digit-recognition/)
+<a href="https://colab.research.google.com/github/nabdeep-patel/handwritten-digit-recognition/blob/main/Handwritten_Digit_Classification.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
+
 
 ## Project Overview
 
