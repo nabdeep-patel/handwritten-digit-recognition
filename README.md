@@ -31,7 +31,7 @@ Subsequently, we evaluated its performance on a separate test dataset. Our model
 
 ## Connect with me
 
-🚀 If you liked my content, please support me providing me a small amount. I will keep me motivated and help me provide better contents.
+🚀 If you liked my content, Please star this repository and use it in your projects by forking it. It will keep me motivated and help me provide better contents.
 
 Feel free to explore further and connect with me on GitHub, LinkedIn, or via my personal website.
 
