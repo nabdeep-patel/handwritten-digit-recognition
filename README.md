@@ -1,14 +1,22 @@
-[https://handwritten-digit-recognition-np.streamlit.app/](https://handwritten-digit-recognition-np.streamlit.app/)
-[https://github.com/nabdeep-patel/handwritten-digit-recognition/](https://github.com/nabdeep-patel/handwritten-digit-recognition/)
-<a href="https://handwritten-digit-recognition-np.streamlit.app/"><img src="https://streamlit.io/images/brand/streamlit-mark-color.png" alt="View the deployed App"></a>
-<a href="https://colab.research.google.com/github/nabdeep-patel/handwritten-digit-recognition/blob/main/Handwritten_Digit_Classification.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
+# Handwritten Digit Recognition using MNIST Data
 
+![Handwritten Digit Recognition](https://raw.githubusercontent.com/nabdeep-patel/handwritten-digit-recognition/main/images/handwritten_digit_recognition.png)
+
+## Deployed Link
+
+[https://handwritten-digit-recognition-np.streamlit.app/](https://handwritten-digit-recognition-np.streamlit.app/)
+
+[![Open app](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://handwritten-digit-recognition-np.streamlit.app/)
+
+## Github Repository Link
+
+[https://github.com/nabdeep-patel/handwritten-digit-recognition/](https://github.com/nabdeep-patel/handwritten-digit-recognition/)
 
 ## Project Overview
 
 📝 In this project, I have developed a model capable of accurately classifying and recognizing handwritten digits using the MNIST Data. Leveraging the power of machine learning, particularly utilizing the Relu Function.
 
-Subsequently, we evaluated its performance on a separate test dataset. Our model got a test accuracy of 97% .
+Subsequently, we evaluated its performance on a separate test dataset. Our model got a test accuracy of 97%.
 
 ## About Relu
 
@@ -16,21 +24,21 @@ Subsequently, we evaluated its performance on a separate test dataset. Our model
 
 🔍 **Model Architecture:**
 
-- **Input Layer:** Accepts the flattened pixel values of the input image.
-- **Dense Layer:** Comprising multiple neurons to extract features from the data.
-- **Activation Function:** Injects non-linearity into the model.
-- **Output Layer:** Yields the final prediction for the digit class.
-
----
+1. **Input Layer:** Accepts the flattened pixel values of the input image.
+2. **Dense Layer:** Comprising multiple neurons to extract features from the data.
+3. **Activation Function:** Injects non-linearity into the model.
+4. **Output Layer:** Yields the final prediction for the digit class.
 
 ## Connect with me
 
 🚀 If you liked my content, please support me providing me a small amount. I will keep me motivated and help me provide better contents.
 
-Feel free to explore further and connect with me on GitHub, LinkedIn, or via my personal website. 
+Feel free to explore further and connect with me on GitHub, LinkedIn, or via my personal website.
 
 [![GitHub](https://img.shields.io/badge/GitHub-Profile-blue?style=flat-square&logo=github)](https://github.com/nabdeep-patel)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/nabdeeppatel)
 [![Website](https://img.shields.io/badge/Personal-Website-blue?style=flat-square&logo=chrome)](https://linktr.ee/nabdeeppatel/store)
+
+<a href="https://colab.research.google.com/github/nabdeep-patel/handwritten-digit-recognition/blob/main/Handwritten_Digit_Classification.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
 
 Let's continue to innovate and create meaningful solutions together. 🚀🔬✨
