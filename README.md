@@ -8,7 +8,8 @@
 
 [![Open app](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://handwritten-digit-recognition-np.streamlit.app/)
 
-Github Repository: https://github.com/nabdeep-patel/handwritten-digit-recognition/ [https://github.com/nabdeep-patel/handwritten-digit-recognition/](https://github.com/nabdeep-patel/handwritten-digit-recognition/) 
+Github Repository: https://github.com/nabdeep-patel/handwritten-digit-recognition/ [![GitHub](https://img.shields.io/badge/-Repository-blue?style=flat-square&logo=github)](https://github.com/nabdeep-patel)
+
 
 ## Project Overview
 
