@@ -9,15 +9,19 @@ def main():
     st.sidebar.markdown("- [GitHub](#github)")
     st.sidebar.markdown("- [IPython Notebook](#ipython-notebook)")
     st.write("---")
-    st.sidebar.markdown(
-        "Connect with me:\n"
-        "[![GitHub](https://img.shields.io/badge/GitHub-Profile-blue?style=flat-square&logo=github)](https://github.com/nabdeep-patel)\n"
-        "[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/nabdeeppatel)\n"
-        "[![Website](https://img.shields.io/badge/Personal-Website-blue?style=flat-square&logo=chrome)](https://linktr.ee/nabdeeppatel/store)"
-    )
-    st.markdown(
-        "[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/nabdeep-patel)"
-    )
+    
+    # Connect with me section
+    st.sidebar.markdown("Connect with me:")
+    
+    github_link = "[![GitHub](https://img.shields.io/badge/GitHub-Profile-blue?style=flat-square&logo=github)](https://github.com/nabdeep-patel)"
+    linkedin_link = "[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/nabdeeppatel)"
+    website_link = "[![Website](https://img.shields.io/badge/Personal-Website-blue?style=flat-square&logo=chrome)](https://linktr.ee/nabdeeppatel/store)"
+    
+    st.sidebar.markdown(github_link + " " + linkedin_link + " " + website_link)
+    
+    # GitHub badge
+    github_badge = "[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/nabdeep-patel)"
+    st.markdown(github_badge)
 
 if __name__ == "__main__":
     main()
