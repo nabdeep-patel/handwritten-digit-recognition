@@ -1,7 +1,7 @@
 # Handwritten Digit Recognition using MNIST Data
 
-[![Deployed Link](https://img.shields.io/badge/Deployed_Link-Handwritten_Digit_Recognition-blue?style=flat-square)](https://handwritten-digit-recognition-np.streamlit.app/)
-[![GitHub Repository](https://img.shields.io/badge/GitHub_Repository-Handwritten_Digit_Recognition-blue?style=flat-square&logo=github)](https://github.com/nabdeep-patel/handwritten-digit-recognition/)
+[![Deployed Link](https://img.shields.io/badge/Deployed_Link-Streamlit-blue?style=flat-square)](https://handwritten-digit-recognition-np.streamlit.app/)
+[![GitHub Repository](https://img.shields.io/badge/Repository-Github-blue?style=flat-square&logo=github)](https://github.com/nabdeep-patel/handwritten-digit-recognition/)
 
 ## Project Overview
 
