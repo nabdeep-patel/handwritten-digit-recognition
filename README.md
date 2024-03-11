@@ -8,9 +8,7 @@
 
 [![Open app](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://handwritten-digit-recognition-np.streamlit.app/)
 
-## Github Repository Link
-
-[https://github.com/nabdeep-patel/handwritten-digit-recognition/](https://github.com/nabdeep-patel/handwritten-digit-recognition/)
+Github Repository: https://github.com/nabdeep-patel/handwritten-digit-recognition/ [https://github.com/nabdeep-patel/handwritten-digit-recognition/](https://github.com/nabdeep-patel/handwritten-digit-recognition/) 
 
 ## Project Overview
 
@@ -38,7 +36,5 @@ Feel free to explore further and connect with me on GitHub, LinkedIn, or via my 
 [![GitHub](https://img.shields.io/badge/GitHub-Profile-blue?style=flat-square&logo=github)](https://github.com/nabdeep-patel)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/nabdeeppatel)
 [![Website](https://img.shields.io/badge/Personal-Website-blue?style=flat-square&logo=chrome)](https://linktr.ee/nabdeeppatel/store)
-
-<a href="https://colab.research.google.com/github/nabdeep-patel/handwritten-digit-recognition/blob/main/Handwritten_Digit_Classification.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
 
 Let's continue to innovate and create meaningful solutions together. 🚀🔬✨
