@@ -24,12 +24,17 @@ The model's performance is evaluated using a test set that was not seen during t
 ## Usage
 
 The provided `Handwritten Digit Classification.ipynb` script demonstrates how to load the trained model, preprocess new images, and make predictions. You can modify the script to load your own images or integrate the model into your application.
----
+
+<div align="center">
 
 ---
 
-[![GitHub](https://img.shields.io/badge/GitHub-Profile-blue?style=flat-square&logo=github)](https://github.com/yourusername)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/yourusername)
-[![Website](https://img.shields.io/badge/Personal-Website-blue?style=flat-square&logo=chrome)](https://yourwebsite.com)
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-blue?style=flat-square&logo=github)](https://github.com/nabdeep-patel)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/nabdeeppatel)
+[![Website](https://img.shields.io/badge/Personal-Website-blue?style=flat-square&logo=chrome)](https://linktr.ee/nabdeeppatel/store)
+[![Buy me a coffee](https://img.shields.io/badge/Buy_me_a_coffee-Donate-blue?style=flat-square&logo=buy-me-a-coffee)](https://buymeacoff.ee/nabdeeppatel)
+
+</div>
+
 
 
