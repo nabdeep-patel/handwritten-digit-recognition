@@ -1,40 +1,35 @@
 # Handwritten Digit Recognition using MNIST Data
 
-## Deployed Link: https://handwritten-digit-recognition-np.streamlit.app/
+[![Deployed Link](https://img.shields.io/badge/Deployed_Link-Handwritten_Digit_Recognition-blue?style=flat-square)](https://handwritten-digit-recognition-np.streamlit.app/)
+[![GitHub Repository](https://img.shields.io/badge/GitHub_Repository-Handwritten_Digit_Recognition-blue?style=flat-square&logo=github)](https://github.com/nabdeep-patel/handwritten-digit-recognition/)
 
 ## Project Overview
 
-In this project, we have developed a model that can classify and recognize handwritten digits. We leverage the power of machine learning (Relu Function) to train a model on a subset of the MNIST dataset and then evaluate its performance on a separate test set. The model uses a neural network architecture to learn the patterns and features present in the images of handwritten digits.
+📝 In this project, I have developed a model capable of accurately classifying and recognizing handwritten digits using the MNIST Data. Leveraging the power of machine learning, particularly utilizing the Relu Function.
 
-## Model Architecture
+Subsequently, we evaluated its performance on a separate test dataset. Our model got a test accuracy of 97% .
 
-We have employed a deep learning architecture for this handwritten digit recognition task. The model consists of a sequential stack of layers, including dense (fully connected) layers and an output layer. Each dense layer is followed by an activation function to introduce non-linearity.
+## About Relu
 
-The architecture of the model is as follows:
+🏗️ Our model architecture adopts a deep learning approach tailored for handwritten digit recognition. It comprises a sequential stack of layers, including dense (fully connected) layers along with an output layer. Each dense layer is accompanied by an activation function to introduce non-linearity, thereby enhancing the model's capacity to capture complex patterns.
 
-1. Input Layer: Accepts the flattened pixel values of the input image.
-2. Dense Layer: Composed of multiple neurons to learn features from the data.
-3. Activation Function: Introduces non-linearity to the model.
-4. Output Layer: Produces the final prediction for the digit class.
+🔍 **Model Architecture:**
 
-## Results and Evaluation
-
-The model's performance is evaluated using a test set that was not seen during training. We measure metrics such as accuracy, precision, recall, and F1-score to assess how well the model generalizes to new data. The evaluation helps us understand the model's ability to correctly classify handwritten digits.
-
-## Usage
-
-The provided `Handwritten Digit Classification.ipynb` script demonstrates how to load the trained model, preprocess new images, and make predictions. You can modify the script to load your own images or integrate the model into your application.
-
-<div align="center">
+- **Input Layer:** Accepts the flattened pixel values of the input image.
+- **Dense Layer:** Comprising multiple neurons to extract features from the data.
+- **Activation Function:** Injects non-linearity into the model.
+- **Output Layer:** Yields the final prediction for the digit class.
 
 ---
+
+## Connect with me
+
+🚀 If you liked my content, please support me providing me a small amount. I will keep me motivated and help me provide better contents.
+
+Feel free to explore further and connect with me on GitHub, LinkedIn, or via my personal website. 
 
 [![GitHub](https://img.shields.io/badge/GitHub-Profile-blue?style=flat-square&logo=github)](https://github.com/nabdeep-patel)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/nabdeeppatel)
 [![Website](https://img.shields.io/badge/Personal-Website-blue?style=flat-square&logo=chrome)](https://linktr.ee/nabdeeppatel/store)
-[![Buy me a coffee](https://img.shields.io/badge/Buy_me_a_coffee-Donate-blue?style=flat-square&logo=buy-me-a-coffee)](https://buymeacoff.ee/nabdeeppatel)
 
-</div>
-
-
-
+Let's continue to innovate and create meaningful solutions together. 🚀🔬✨
