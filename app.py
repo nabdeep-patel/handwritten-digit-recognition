@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit.elements.canvas import st_canvas
 from PIL import Image
 
 def main():
@@ -20,6 +21,7 @@ def main():
     
     st.sidebar.markdown(github_link + " " + linkedin_link + " " + website_link + " " + email_link)
     st.sidebar.markdown("Created by Nabdeep Patel")
+    canvas()
 
 def canvas():
     st.title("Drawable Canvas App")
