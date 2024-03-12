@@ -1,6 +1,5 @@
 import streamlit as st
-from streamlit.elements.canvas import st_canvas
-from PIL import Image
+from streamlit_drawable_canvas import st_canvas
 
 def main():
     st.title("Simple Streamlit App")
@@ -21,29 +20,25 @@ def main():
     
     st.sidebar.markdown(github_link + " " + linkedin_link + " " + website_link + " " + email_link)
     st.sidebar.markdown("Created by Nabdeep Patel")
-    canvas()
+    mycanvas()
 
-def canvas():
-    st.title("Drawable Canvas App")
+def mycanvas():
+    st.write("Canvas")
 
-    # Create a drawable canvas
-    canvas = st_canvas(
-        fill_color="rgba(255, 165, 0, 0.3)",  # Orange with opacity
+    canvas_result = st_canvas(
+        fill_color="#eee",
         stroke_width=10,
-        stroke_color="rgb(255, 165, 0)",
-        background_color="#FFF",
-        width=300,
-        height=300,
+        stroke_color="white",
+        background_color="black",
+        update_streamlit=True,
+        height=200,
+        width=200,
         drawing_mode="freedraw",
-        key="canvas"
     )
-
-    # Convert the canvas data to an image
-    if canvas.image_data is not None:
-        image = Image.fromarray(canvas.image_data.astype("uint8"))
-
-        # Display the canvas as an image
-        st.image(image, caption="Your Drawing", use_column_width=True)
+    
+    st.write("Image of the canvas")
+    if canvas_result.image_data is not None:
+        st.image(canvas_result.image_data)
 
 if __name__ == "__main__":
     main()
