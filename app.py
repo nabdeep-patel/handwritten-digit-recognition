@@ -1,4 +1,5 @@
 import streamlit as st
+from PIL import Image
 
 def main():
     st.title("Simple Streamlit App")
@@ -19,10 +20,28 @@ def main():
     
     st.sidebar.markdown(github_link + " " + linkedin_link + " " + website_link + " " + email_link)
     st.sidebar.markdown("Created by Nabdeep Patel")
-    
-    # GitHub badge
-    github_badge = "[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/nabdeep-patel)"
-    st.markdown(github_badge)
+
+def canvas():
+    st.title("Drawable Canvas App")
+
+    # Create a drawable canvas
+    canvas = st_canvas(
+        fill_color="rgba(255, 165, 0, 0.3)",  # Orange with opacity
+        stroke_width=10,
+        stroke_color="rgb(255, 165, 0)",
+        background_color="#FFF",
+        width=300,
+        height=300,
+        drawing_mode="freedraw",
+        key="canvas"
+    )
+
+    # Convert the canvas data to an image
+    if canvas.image_data is not None:
+        image = Image.fromarray(canvas.image_data.astype("uint8"))
+
+        # Display the canvas as an image
+        st.image(image, caption="Your Drawing", use_column_width=True)
 
 if __name__ == "__main__":
     main()
