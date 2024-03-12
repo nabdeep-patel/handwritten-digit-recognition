@@ -6,28 +6,11 @@ import tensorflow as tf
 import gdown
 
 def preprocess_image(image_data):
-    """
-    Preprocesses the image data obtained from the canvas.
-
-    Parameters:
-        image_data (numpy.ndarray): The image data obtained from the canvas.
-
-    Returns:
-        numpy.ndarray: The preprocessed image data.
-    """
-    # Convert image data to PIL Image
     image = Image.fromarray(image_data)
+    resized_image = image.resize((28, 28))
+    return resized_image
 
-    # Resize the image to (100, 100) for downsampling
-    resized_image = image.resize((100, 100))
 
-    # Convert resized image to numpy array
-    resized_image_data = np.array(resized_image)
-
-    # Flatten the resized image data
-    flattened_image_data = resized_image_data.reshape(10000, 4)
-
-    return flattened_image_data
 
 def main():
     st.title("Simple Streamlit App")
@@ -68,22 +51,21 @@ def mycanvas():
     if canvas_result.image_data is not None:
         st.image(canvas_result.image_data)
         preprocessed_image = preprocess_image(canvas_result.image_data)
-        st.write("Preprocessed Image Shape:", preprocessed_image.shape)
+        model_url = "https://docs.google.com/uc?export=download&id=16m69DmL-r-x2bBNhKuyheDoUtFWxBFcq"
+        model_path = "model.h5"
+        gdown.download(model_url, model_path, quiet=False)
+        model = tf.keras.models.load_model(model_path)
 
-        # Download the model file from Google Drive
-        url = 'https://docs.google.com/uc?export=download&id=16m69DmL-r-x2bBNhKuyheDoUtFWxBFcq'
-        output = 'model.h5'
-        gdown.download(url, output, quiet=False)
-
-        # Load the model
-        model = tf.keras.models.load_model('model.h5')
-
-        # Make predictions
-        predicted_probs = model.predict(preprocessed_image.reshape(1, 10000, 4))
+        # Flatten the preprocessed image
+        predicted_probs = model.predict(preprocessed_image)
         predicted_classes = np.argmax(predicted_probs, axis=1)
 
         # Display predicted classes
-        st.write("Predicted Classes:", predicted_classes)
+        st.write("Predicted Classes:", predicted_classes) 
+
+        # Load the model from Google Drive
+        
+
 
 if __name__ == "__main__":
     main()
