@@ -52,9 +52,8 @@ def mycanvas():
     
     st.write("Image of the canvas")
     if canvas_result.image_data is not None:
-        st.image(canvas_result.image_data)
         preprocessed_image = preprocess_image(canvas_result.image_data)
-        
+        st.image(preprocessed_image.image_data)
         st.write("Preprocessed Image Shape:", preprocessed_image.shape)
 
 if __name__ == "__main__":
