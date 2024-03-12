@@ -1,5 +1,7 @@
 import streamlit as st
 from streamlit_drawable_canvas import st_canvas
+import numpy as np
+from PIL import Image
 
 def main():
     st.title("Simple Streamlit App")
@@ -21,6 +23,18 @@ def main():
     st.sidebar.markdown(github_link + " " + linkedin_link + " " + website_link + " " + email_link)
     st.sidebar.markdown("Created by Nabdeep Patel")
     mycanvas()
+def preprocess_image(image_data):
+    image = Image.fromarray(image_data)
+
+    # Resize the image to (100, 100) for downsampling
+    resized_image = image.resize((100, 100))
+
+    # Convert resized image to numpy array
+    resized_image_data = np.array(resized_image)
+
+    # Flatten the resized image data
+    flattened_image_data = resized_image_data.reshape(10000, 4)
+    return flattened_image_data
 
 def mycanvas():
     st.write("Canvas")
@@ -39,6 +53,9 @@ def mycanvas():
     st.write("Image of the canvas")
     if canvas_result.image_data is not None:
         st.image(canvas_result.image_data)
+        preprocessed_image = preprocess_image(canvas_result.image_data)
+        
+        st.write("Preprocessed Image Shape:", preprocessed_image.shape)
 
 if __name__ == "__main__":
     main()
