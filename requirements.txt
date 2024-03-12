@@ -6,4 +6,3 @@ keras
 tensorflow
 matplotlib
 streamlit-drawable-canvas
-streamlit.elements.canvas
