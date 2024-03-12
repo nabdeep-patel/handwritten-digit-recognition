@@ -8,6 +8,7 @@ import gdown
 def preprocess_image(image_data):
     image = Image.fromarray(image_data)
     resized_image = image.resize((28, 28))
+    resized_image = image.astype('float32')
     return resized_image
 
 
