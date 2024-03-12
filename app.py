@@ -8,10 +8,9 @@ import gdown
 def preprocess_image(image_data):
     image = Image.fromarray(image_data)
     resized_image = image.resize((28, 28))
-    resized_image = image.astype('float32')
-    return resized_image
-
-
+    resized_image_array = np.array(resized_image)
+    resized_image_array = resized_image_array.astype('float32')
+    return np.expand_dims(resized_image_array, axis=0)
 
 def main():
     st.title("Simple Streamlit App")
@@ -63,10 +62,6 @@ def mycanvas():
 
         # Display predicted classes
         st.write("Predicted Classes:", predicted_classes) 
-
-        # Load the model from Google Drive
-        
-
 
 if __name__ == "__main__":
     main()
