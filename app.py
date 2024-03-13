@@ -52,7 +52,7 @@ def mycanvas():
     if canvas_result.image_data is not None:
         st.image(canvas_result.image_data)
         preprocessed_image = preprocess_image(canvas_result.image_data)
-        grayscale_image = np.meanpreprocessed_image axis=2)
+        grayscale_image = np.mean(preprocessed_image, axis=2)
         resized_image = np.resize(grayscale_image, (28, 28))
         plt.imshow(resized_image, cmap='gray')
         plt.show()
