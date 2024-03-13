@@ -54,11 +54,9 @@ def mycanvas():
         preprocessed_image = preprocess_image(canvas_result.image_data)
         grayscale_image = np.mean(preprocessed_image, axis=2)
         resized_image = np.resize(grayscale_image, (28, 28))
-        plt.imshow(resized_image, cmap='gray')
-        plt.show()
+        st.image(resized_image, caption='Preprocessed Image', use_column_width=True)
 
         # Display predicted classes
-        st.write("Predicted Classes:", predicted_classes) 
 
 if __name__ == "__main__":
     main()
