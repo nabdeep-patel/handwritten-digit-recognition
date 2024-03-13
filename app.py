@@ -4,6 +4,7 @@ from streamlit_drawable_canvas import st_canvas
 import numpy as np
 import tensorflow as tf
 import gdown
+import matplotlib.pyplot as plt
 
 def preprocess_image(image_data):
     image = Image.fromarray(image_data)
@@ -51,14 +52,10 @@ def mycanvas():
     if canvas_result.image_data is not None:
         st.image(canvas_result.image_data)
         preprocessed_image = preprocess_image(canvas_result.image_data)
-        model_url = "https://docs.google.com/uc?export=download&id=16m69DmL-r-x2bBNhKuyheDoUtFWxBFcq"
-        model_path = "model.h5"
-        gdown.download(model_url, model_path, quiet=False)
-        model = tf.keras.models.load_model(model_path)
-
-        # Flatten the preprocessed image
-        predicted_probs = model.predict(preprocessed_image)
-        predicted_classes = np.argmax(predicted_probs, axis=1)
+        grayscale_image = np.meanpreprocessed_image axis=2)
+        resized_image = np.resize(grayscale_image, (28, 28))
+        plt.imshow(resized_image, cmap='gray')
+        plt.show()
 
         # Display predicted classes
         st.write("Predicted Classes:", predicted_classes) 
