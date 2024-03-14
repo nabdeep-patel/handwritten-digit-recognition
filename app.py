@@ -88,7 +88,7 @@ def mycanvas():
         preprocessed_image_vector = preprocess_image(canvas_result.image_data)
         
         # Plot and show the resized image
-        fig = plt.figure(figsize=(4, 4))
+        fig = plt.figure(figsize=(3, 3))
         plt.imshow(preprocessed_image_vector.reshape(28, 28), cmap='gray')  # Reshape back to 28x28 for visualization
         plt.title('Resized Image')
         plt.axis('off')
