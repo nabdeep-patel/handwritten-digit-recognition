@@ -3,19 +3,19 @@ from PIL import Image
 from streamlit_drawable_canvas import st_canvas
 import numpy as np
 import tensorflow as tf
-import requests
 import matplotlib.pyplot as plt
-import urllib.request
+import gdown
 
-# Function to load the trained model
-def load_model():
-    # Download model.h5 from Google Drive
-    url = 'https://drive.google.com/uc?id=16m69DmL-r-x2bBNhKuyheDoUtFWxBFcq&export=download'
+def download_model():
+    url = 'https://drive.google.com/uc?id=16m69DmL-r-x2bBNhKuyheDoUtFWxBFcq'
     output = 'model.h5'
-    urllib.request.urlretrieve(url, output)
-    model = tf.keras.models.load_model(output)
-    return model
+    gdown.download(url, output, quiet=False)
 
+def load_model():
+    if not os.path.exists('model.h5'):
+        download_model()
+    model = tf.keras.models.load_model('model.h5')
+    return model
 
 def preprocess_image(image_data):
     image = Image.fromarray(image_data)
@@ -74,7 +74,7 @@ def mycanvas():
 
     canvas_result = st_canvas(
         fill_color="#eee",
-        stroke_width=17,
+        stroke_width=20,
         stroke_color="white",
         background_color="black",
         update_streamlit=True,
@@ -95,6 +95,12 @@ def mycanvas():
         
         if st.button("Get Prediction"):
             st.pyplot(fig)
+            model = load_model()
+            predictions = model.predict(preprocessed_image_vector)
+            # Print the predictions
+            st.write("Predictions:")
+            st.write(predictions)
+            
 
 if __name__ == "__main__":
     main()
