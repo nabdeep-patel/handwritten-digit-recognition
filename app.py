@@ -2,11 +2,55 @@ import streamlit as st
 from PIL import Image
 from streamlit_drawable_canvas import st_canvas
 import numpy as np
-import requests
 import tensorflow as tf
+import requests
 import matplotlib.pyplot as plt
+import urllib.request
 
-# Function to preprocess the image
+# Function to load the trained model
+def load_model():
+    # Download model.h5 from Google Drive
+    url = 'https://drive.google.com/uc?id=16m69DmL-r-x2bBNhKuyheDoUtFWxBFcq&export=download'
+    output = 'model.h5'
+    urllib.request.urlretrieve(url, output)
+    model = tf.keras.models.load_model(output)
+    return model
+
+
+def preprocess_image(image_data):
+    image = Image.fromarray(image_data)
+    
+    # Resize using Lanczos resampling
+    size = (28, 28)
+    resized_image = image.resize(size, Image.LANCZOS)
+    
+    # Convert to numpy array
+    resized_image_array = np.array(resized_image)
+    resized_image_array = resized_image_array.astype('float32')
+    
+    return np.expand_dims(resized_image_array, axis=0)
+
+def main():
+    st.title("Simple Streamlit App")
+    st.sidebar.header("Navigation")
+
+    # Sidebar navigation links with bullets
+    st.sidebar.markdown("- [app.py](#app)")
+    st.sidebar.markdown("- [GitHub](#github)")
+    st.sidebar.markdown("- [IPython Notebook](#ipython-notebook)")
+    st.sidebar.write("---")
+    
+    # Connect with me section
+    st.sidebar.markdown("Connect with me:")
+    github_link = "[![GitHub](https://img.shields.io/badge/GitHub-Profile-blue?style=flat-square&logo=github)](https://github.com/nabdeep-patel)"
+    linkedin_link = "[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/nabdeeppatel)"
+    website_link = "[![Website](https://img.shields.io/badge/Personal-Website-blue?style=flat-square&logo=chrome)](https://linktr.ee/nabdeeppatel/store)"
+    email_link = "[![Email](https://img.shields.io/badge/Google-Mail-blue?style=flat-square&logo=gmail)](mailto:nabdeeppatel@gmail.com)"
+    
+    st.sidebar.markdown(github_link + " " + linkedin_link + " " + website_link + " " + email_link)
+    st.sidebar.markdown("Created by Nabdeep Patel")
+    mycanvas()
+
 def preprocess_image(image_data):
     image = Image.fromarray(image_data)
     
@@ -20,56 +64,40 @@ def preprocess_image(image_data):
     # Normalize pixel values to range [0, 1]
     resized_image_array = np.array(resized_image) / 255.0
     
-    # Reshape to vector of size (1, 784)
+    # Reshape to vector of size (None, 784)
     resized_image_vector = resized_image_array.reshape(1, -1)  # Reshape to row vector
     
     return resized_image_vector
 
-# Function to load the trained model
-def load_model():
-    # Download model.h5 from Google Drive
-    url = 'https://drive.google.com/uc?id=16m69DmL-r-x2bBNhKuyheDoUtFWxBFcq&export=download'
-    output = 'model.h5'
-    
-    # Download the file using requests
-    response = requests.get(url)
-    with open(output, 'wb') as f:
-        f.write(response.content)
-    
-    # Load the model
-    model = tf.keras.models.load_model(output)
-    return model
+def mycanvas():
+    st.write("Canvas")
 
-# Function to make predictions
-def predict_image(image_vector, model):
-    prediction = model.predict(image_vector)
-    return prediction
-
-# Main function
-def main():
-    st.title("Handwritten Digit Recognition")
-
-    # Load the trained model
-    model = load_model()
-
-    # Canvas for drawing
-    st.write("Draw a digit on the canvas:")
     canvas_result = st_canvas(
-        fill_color="#000000",  # Background color: black
-        stroke_width=20,
-        stroke_color="#FFFFFF",  # Drawing color: white
-        background_color="#000000",  # Canvas color: black
-        width=150,
-        height=150,
+        fill_color="#eee",
+        stroke_width=10,
+        stroke_color="white",
+        background_color="black",
+        update_streamlit=True,
+        height=280,  
+        width=280,   
         drawing_mode="freedraw",
-        key="canvas",
     )
-
-    # Make predictions on canvas image
+    
+    st.write("Image of the canvas")
     if canvas_result.image_data is not None:
-        prediction = predict_image(canvas_result.image_data, model)
-        st.write("Prediction:")
-        st.write(prediction)
+        st.image(canvas_result.image_data)
+        preprocessed_image_vector = preprocess_image(canvas_result.image_data)
+        
+        # Plot and show the resized image
+        plt.imshow(preprocessed_image_vector.reshape(28, 28), cmap='gray')  # Reshape back to 28x28 for visualization
+        plt.title('Resized Image')
+        plt.axis('off')
+        st.pyplot()
+        st.set_option('deprecation.showPyplotGlobalUse', False)
+        # Display shape of the resized image vector
+        st.write(f"Resized image vector shape: {preprocessed_image_vector.shape}")
+
+
 
 if __name__ == "__main__":
     main()
