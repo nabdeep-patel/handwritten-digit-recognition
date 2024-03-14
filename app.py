@@ -3,7 +3,6 @@ from PIL import Image
 from streamlit_drawable_canvas import st_canvas
 import numpy as np
 import tensorflow as tf
-import gdown
 import matplotlib.pyplot as plt
 
 # Function to preprocess the image
@@ -28,12 +27,16 @@ def preprocess_image(image_data):
 # Function to load the trained model
 def load_model():
     # Download model.h5 from Google Drive
-    url = 'https://drive.google.com/uc?id=16m69DmL-r-x2bBNhKuyheDoUtFWxBFcq'
+    url = 'https://drive.google.com/uc?id=16m69DmL-r-x2bBNhKuyheDoUtFWxBFcq&export=download'
     output = 'model.h5'
-    gdown.download(url, output, quiet=False)
+    
+    # Download the file using requests
+    response = requests.get(url)
+    with open(output, 'wb') as f:
+        f.write(response.content)
     
     # Load the model
-    model = tf.keras.models.load_model('model.h5')
+    model = tf.keras.models.load_model(output)
     return model
 
 # Function to make predictions
@@ -63,11 +66,9 @@ def main():
 
     # Make predictions on canvas image
     if canvas_result.image_data is not None:
-        preprocessed_image_vector = preprocess_image(canvas_result.image_data)
-        prediction = predict_image(preprocessed_image_vector, model)
-        
+        prediction = predict_image(canvas_result.image_data, model)
         st.write("Prediction:")
-        st.write(np.argmax(prediction))
+        st.write(prediction)
 
 if __name__ == "__main__":
     main()
