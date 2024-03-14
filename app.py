@@ -49,8 +49,8 @@ def mycanvas():
         stroke_color="white",
         background_color="black",
         update_streamlit=True,
-        height=28,
-        width=28,
+        height=120,
+        width=120,
         drawing_mode="freedraw",
     )
     
