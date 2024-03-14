@@ -56,18 +56,10 @@ def main():
 
 def preprocess_image(image_data):
     image = Image.fromarray(image_data)
-    
-    # Resize using Lanczos resampling
     size = (28, 28)
     resized_image = image.resize(size, Image.LANCZOS)
-    
-    # Convert to grayscale
     resized_image = resized_image.convert('L')
-    
-    # Normalize pixel values to range [0, 1]
     resized_image_array = np.array(resized_image) / 255.0
-    
-    # Reshape to vector of size (None, 784)
     resized_image_vector = resized_image_array.reshape(1, -1)  # Reshape to row vector
     
     return resized_image_vector
@@ -91,20 +83,21 @@ def mycanvas():
         preprocessed_image_vector = preprocess_image(canvas_result.image_data)
         
         # Plot and show the resized image
-        st.write("Processed image")
+        
         fig = plt.figure(figsize=(3, 3))
         plt.imshow(preprocessed_image_vector.reshape(28, 28), cmap='gray')  # Reshape back to 28x28 for visualization
         plt.title('Resized Image')
         plt.axis('off')
         
         if st.button("Get Prediction"):
+            st.write("Processed image")
             st.pyplot(fig)
             model = load_model()
             predictions = model.predict(preprocessed_image_vector)
             # Print the predictions
             st.write("Predictions:")
             st.write(predictions)
-            predictions1 = model.predict(np.expand_dims(preprocessed_image, axis=0))[0]
+            predictions1 = model.predict(np.expand_dims(preprocessed_image_vector, axis=0))[0]
             predicted_digit = np.argmax(predictions1)
             st.write(f"Predicted Digit: {predicted_digit}")
             
