@@ -8,9 +8,15 @@ import matplotlib.pyplot as plt
 
 def preprocess_image(image_data):
     image = Image.fromarray(image_data)
-    resized_image = image.resize((28, 28))
+    
+    # Resize using Lanczos resampling
+    size = (28, 28)
+    resized_image = image.resize(size, Image.LANCZOS)
+    
+    # Convert to numpy array
     resized_image_array = np.array(resized_image)
     resized_image_array = resized_image_array.astype('float32')
+    
     return np.expand_dims(resized_image_array, axis=0)
 
 def main():
@@ -43,8 +49,8 @@ def mycanvas():
         stroke_color="white",
         background_color="black",
         update_streamlit=True,
-        height=200,
-        width=200,
+        height=28,
+        width=28,
         drawing_mode="freedraw",
     )
     
@@ -53,10 +59,21 @@ def mycanvas():
         st.image(canvas_result.image_data)
         preprocessed_image = preprocess_image(canvas_result.image_data)
         grayscale_image = np.mean(preprocessed_image, axis=2)
-        resized_image = np.resize(grayscale_image, (28, 28))
-        st.image(resized_image, caption='Preprocessed Image', use_column_width=True)
+        
+        # Normalize grayscale image
+        grayscale_image_normalized = grayscale_image / 255.0
+        
+        st.image(grayscale_image_normalized)
+        resized_image = np.resize(grayscale_image_normalized, (28, 28))
 
-        # Display predicted classes
+        # Plot and show the resized image
+        plt.imshow(resized_image, cmap='gray')
+        plt.title('Resized Image')
+        plt.axis('off')
+        st.pyplot()
+
+        # Display shape of the resized image
+        st.write(f"Resized image shape: {resized_image.shape}")
 
 if __name__ == "__main__":
     main()
