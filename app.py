@@ -2,6 +2,7 @@ import streamlit as st
 from PIL import Image
 from streamlit_drawable_canvas import st_canvas
 import numpy as np
+import requests
 import tensorflow as tf
 import matplotlib.pyplot as plt
 
