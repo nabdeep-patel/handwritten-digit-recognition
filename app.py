@@ -74,7 +74,7 @@ def mycanvas():
 
     canvas_result = st_canvas(
         fill_color="#eee",
-        stroke_width=10,
+        stroke_width=17,
         stroke_color="white",
         background_color="black",
         update_streamlit=True,
@@ -92,12 +92,9 @@ def mycanvas():
         plt.imshow(preprocessed_image_vector.reshape(28, 28), cmap='gray')  # Reshape back to 28x28 for visualization
         plt.title('Resized Image')
         plt.axis('off')
-        st.pyplot(fig)
-        # Display shape of the resized image vector
-        st.write(f"Resized image vector shape: {preprocessed_image_vector.shape}")
+        
         if st.button("Get Prediction"):
-            # Call a function to get prediction
-            pass
+            st.pyplot(fig)
 
 if __name__ == "__main__":
     main()
