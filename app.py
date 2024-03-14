@@ -31,7 +31,7 @@ def preprocess_image(image_data):
     return np.expand_dims(resized_image_array, axis=0)
 
 def main():
-    st.title("Simple Streamlit App")
+    st.title("Hadwritten Digit Recognition")
     st.sidebar.header("Navigation")
 
     # Sidebar navigation links with bullets
@@ -70,7 +70,7 @@ def preprocess_image(image_data):
     return resized_image_vector
 
 def mycanvas():
-    st.write("Canvas")
+    st.write("Draw a digit on the canvas and click get prediction.")
 
     canvas_result = st_canvas(
         fill_color="#eee",
@@ -85,19 +85,19 @@ def mycanvas():
     
     st.write("Image of the canvas")
     if canvas_result.image_data is not None:
-        st.image(canvas_result.image_data)
         preprocessed_image_vector = preprocess_image(canvas_result.image_data)
         
         # Plot and show the resized image
+        fig = plt.figure(figsize=(4, 4))
         plt.imshow(preprocessed_image_vector.reshape(28, 28), cmap='gray')  # Reshape back to 28x28 for visualization
         plt.title('Resized Image')
         plt.axis('off')
-        st.pyplot()
-        st.set_option('deprecation.showPyplotGlobalUse', False)
+        st.pyplot(fig)
         # Display shape of the resized image vector
         st.write(f"Resized image vector shape: {preprocessed_image_vector.shape}")
-
-
+        if st.button("Get Prediction"):
+            # Call a function to get prediction
+            pass
 
 if __name__ == "__main__":
     main()
