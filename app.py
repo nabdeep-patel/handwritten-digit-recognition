@@ -4,7 +4,22 @@ from streamlit_drawable_canvas import st_canvas
 import numpy as np
 import tensorflow as tf
 import matplotlib.pyplot as plt
+import gdown
+import os
 
+# Function to download the model
+def download_model():
+    url = 'https://drive.google.com/uc?export=download&id=16m69DmL-r-x2bBNhKuyheDoUtFWxBFcq'
+    output = 'model.h5'
+    gdown.download(url, output, quiet=False)
+
+# Function to load the trained model
+def load_model():
+    if not os.path.exists('model.h5'):
+        download_model()
+    model = tf.keras.models.load_model('model.h5')
+    return model
+    
 def preprocess_image(image_data):
     image = Image.fromarray(image_data)
     
@@ -83,7 +98,7 @@ def mycanvas():
         
         if st.button("Get Prediction"):
             st.pyplot(fig)
-            model = tf.keras.models.load_model('https://drive.google.com/uc?export=download&id=16m69DmL-r-x2bBNhKuyheDoUtFWxBFcq')
+            model = load_model()
             predictions = model.predict(preprocessed_image_vector)
             # Print the predictions
             st.write("Predictions:")
