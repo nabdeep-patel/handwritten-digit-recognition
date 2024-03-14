@@ -53,14 +53,17 @@ def preprocess_image(image_data):
     # Normalize pixel values to range [0, 1]
     resized_image_array = np.array(resized_image) / 255.0
     
-    return np.expand_dims(resized_image_array, axis=0)
+    # Reshape to vector of size (None, 784)
+    resized_image_vector = resized_image_array.reshape(1, -1)  # Reshape to row vector
+    
+    return resized_image_vector
 
 def mycanvas():
     st.write("Canvas")
 
     canvas_result = st_canvas(
         fill_color="#eee",
-        stroke_width=16,
+        stroke_width=10,
         stroke_color="white",
         background_color="black",
         update_streamlit=True,
@@ -72,16 +75,17 @@ def mycanvas():
     st.write("Image of the canvas")
     if canvas_result.image_data is not None:
         st.image(canvas_result.image_data)
-        preprocessed_image = preprocess_image(canvas_result.image_data)
+        preprocessed_image_vector = preprocess_image(canvas_result.image_data)
         
         # Plot and show the resized image
-        plt.imshow(preprocessed_image.squeeze(), cmap='gray')
+        plt.imshow(preprocessed_image_vector.reshape(28, 28), cmap='gray')  # Reshape back to 28x28 for visualization
         plt.title('Resized Image')
         plt.axis('off')
         st.pyplot()
+        st.set_option('deprecation.showPyplotGlobalUse', False)
+        # Display shape of the resized image vector
+        st.write(f"Resized image vector shape: {preprocessed_image_vector.shape}")
 
-        # Display shape of the resized image
-        st.write(f"Resized image shape: {preprocessed_image.shape}")
 
 
 if __name__ == "__main__":
