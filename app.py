@@ -91,6 +91,7 @@ def mycanvas():
         preprocessed_image_vector = preprocess_image(canvas_result.image_data)
         
         # Plot and show the resized image
+        st.write("Processed image")
         fig = plt.figure(figsize=(3, 3))
         plt.imshow(preprocessed_image_vector.reshape(28, 28), cmap='gray')  # Reshape back to 28x28 for visualization
         plt.title('Resized Image')
@@ -103,6 +104,10 @@ def mycanvas():
             # Print the predictions
             st.write("Predictions:")
             st.write(predictions)
+            predictions1 = model.predict(np.expand_dims(preprocessed_image, axis=0))[0]
+            predicted_digit = np.argmax(predictions1)
+        
+        st.write(f"Predicted Digit: {predicted_digit}")
             
 
 if __name__ == "__main__":
