@@ -97,9 +97,6 @@ def mycanvas():
             # Print the predictions
             st.write("Predictions:")
             st.write(predictions)
-            predictions1 = model.predict(np.expand_dims(preprocessed_image_vector, axis=0))[0]
-            predicted_digit = np.argmax(predictions1)
-            st.write(f"Predicted Digit: {predicted_digit}")
             
 
 if __name__ == "__main__":
