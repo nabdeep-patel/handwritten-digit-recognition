@@ -34,7 +34,7 @@ def preprocess_image(image_data):
     return np.expand_dims(resized_image_array, axis=0)
 
 def main():
-    st.title("Hadwritten Digit Recognition")
+    st.title("Handwritten Digit Recognition")
     st.sidebar.header("Navigation")
 
     # Sidebar navigation links with bullets
