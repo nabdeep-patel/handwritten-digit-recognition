@@ -38,9 +38,8 @@ def main():
     st.sidebar.header("Navigation")
 
     # Sidebar navigation links with bullets
-    st.sidebar.markdown("- [app.py](#app)")
-    st.sidebar.markdown("- [GitHub](#github)")
-    st.sidebar.markdown("- [IPython Notebook](#ipython-notebook)")
+    st.sidebar.markdown("- [GitHub Repo](https://github.com/nabdeep-patel/handwritten-digit-recognition/)")
+    st.sidebar.markdown("- [Colab Notebook](https://drive.google.com/file/d/1NMB8nkoAxM-wnV9gCdC12JyrscHml3vv/view?usp=sharing)")
     st.sidebar.write("---")
     
     # Connect with me section
