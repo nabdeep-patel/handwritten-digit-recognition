@@ -77,7 +77,6 @@ def mycanvas():
         drawing_mode="freedraw",
     )
     
-    st.write("Image of the canvas")
     if canvas_result.image_data is not None:
         preprocessed_image_vector = preprocess_image(canvas_result.image_data)
         
