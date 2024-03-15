@@ -93,7 +93,8 @@ def mycanvas():
             st.pyplot(fig)
             model = load_model()
             predictions = model.predict(preprocessed_image_vector)
-            # Print the predictions
+            predicted_digit = np.argmax(predictions)
+            st.write("Predicted Digit:", predicted_digit)
             st.write("Predictions:")
             st.write(predictions)
             
