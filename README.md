@@ -10,7 +10,6 @@ Colab: https://drive.google.com/file/d/1NMB8nkoAxM-wnV9gCdC12JyrscHml3vv/view?us
 Github Repository: https://github.com/nabdeep-patel/handwritten-digit-recognition
 
 ## Youtube Report
-[https://www.youtube.com/watch?v=MBAd2XSiwsI](https://www.youtube.com/watch?v=MBAd2XSiwsI)
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/MBAd2XSiwsI/0.jpg)](https://www.youtube.com/watch?v=MBAd2XSiwsI)
 
 ## Project Overview
