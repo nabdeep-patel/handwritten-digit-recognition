@@ -1,7 +1,7 @@
 # Handwritten Digit Recognition using MNIST Data
 
 ## Deployed Link
-[![GitHub](https://img.shields.io/badge/Github-Repository-blue?style=flat-square&logo=github)](https://github.com/nabdeep-patel)<a href="[https://colab.research.google.com/github/nabdeep-patel/handwritten-digit-recognition/blob/main/Handwritten_Digit_Classification.ipynb](https://drive.google.com/file/d/1NMB8nkoAxM-wnV9gCdC12JyrscHml3vv/view?usp=sharing)"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
+[![GitHub](https://img.shields.io/badge/Github-Repository-blue?style=flat-square&logo=github)](https://github.com/nabdeep-patel)  <a href="[https://colab.research.google.com/github/nabdeep-patel/handwritten-digit-recognition/blob/main/Handwritten_Digit_Classification.ipynb](https://drive.google.com/file/d/1NMB8nkoAxM-wnV9gCdC12JyrscHml3vv/view?usp=sharing)"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
 
 
 Colab: https://drive.google.com/file/d/1NMB8nkoAxM-wnV9gCdC12JyrscHml3vv/view?usp=sharing
