@@ -30,6 +30,6 @@ Feel free to explore further and connect with me on GitHub, LinkedIn, or via my 
 
 [![GitHub](https://img.shields.io/badge/GitHub-Profile-blue?style=flat-square&logo=github)](https://github.com/nabdeep-patel)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/nabdeeppatel)
-[![Website](https://img.shields.io/badge/Personal-Website-blue?style=flat-square&logo=chrome)](https://linktr.ee/nabdeeppatel/store)
+[![Website](https://img.shields.io/badge/Personal-Website-blue?style=flat-square&logo=chrome)](https://nabdeep-patel.github.io/portfolio)
 
 Let's continue to innovate and create meaningful solutions together. 🚀🔬✨
